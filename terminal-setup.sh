@@ -10,7 +10,8 @@ set -e
 # --- VARIABLES ---
 TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
 FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/UbuntuMono.zip"
-STARSHIP_CONFIG_URL="https://raw.githubusercontent.com/iElibazz/dotfiles-windows/main/starship.toml"
+# Updated to new dotfiles repo (Raw Link)
+STARSHIP_CONFIG_URL="https://raw.githubusercontent.com/iElibazz/dotfiles/main/starship.toml"
 
 # Colors for pretty output
 GREEN='\033[0;32m'
@@ -91,7 +92,7 @@ log_info "Installing Dependencies..."
 if [ -n "$PKG_MGR" ]; then
     $PKG_UPDATE || true # Continue even if update has minor errors
     
-    # Packge list varies slightly by distro
+    # Package list varies slightly by distro
     case $DISTRO in
         alpine)
             $PKG_MGR wget unzip fontconfig curl git
